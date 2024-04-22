@@ -2,8 +2,8 @@
 This standalone software is used to automate drop rate statistical analysis.
 
 Goals:
-Take in one or multiple item drop rates (ex: 3 diamonds at .3% chance)
 Take in possible info such as:
+ - Repeatedly ask for lootbox item name and chance (ex: "3 diamonds" at .3% chance)
  - Rolls per drop/lootbox (kem rolls 3 times)
  - Rolls per day (range or static number)
 Output a varity of information based on input drop/lootbox such as:
