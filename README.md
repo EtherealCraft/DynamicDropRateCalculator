@@ -11,9 +11,9 @@ This standalone software is used to automate drop rate statistical analysis.
 
 ## Storage Format:
 ### CSV file with a header in the format of:
-    - \<Tier Name\>:\<Tier Weight\>,\<Tier Name>\:\<Tier Weight\>,......
+    \<Tier Name\>:\<Tier Weight\>,\<Tier Name>\:\<Tier Weight\>,......
 ### Each following line in the format of: 
-    - \<objectName\>, \<roll Weight\>, \<tier*\>
+    \<objectName\>, \<roll Weight\>, \<tier*\>
 
 ### Example File:
     Unspoken:.005,Godly:.895,Legendary:1.1,Epic:8,Rare:20,Common:30,Poor:40
@@ -23,12 +23,12 @@ This standalone software is used to automate drop rate statistical analysis.
 
 ## Modes:
 Once you have a file, you must pick a mode. Each mode uses the file drastically different, so be sure to understand what the weights do for each mode.
-    - Basic Chance mode:
-        - Will calculate stats as if there is not an initial tier selection system, using weights, outputing one item.
-    - Tier Mode:
-        - Will roll each tier first, selecting a tier based on the tier weight. It will then ask if you want to use the internal weights, or even odds. (Kem does even odds within tier)
-    - Max Items Mode:
-        - Will roll each item from top to bottom once, with each either being success or failure, outputting multiple items.       
+- Basic Chance mode:
+    - Will calculate stats as if there is not an initial tier selection system, using weights, outputing one item.
+- Tier Mode:
+    - Will roll each tier first, selecting a tier based on the tier weight. It will then ask if you want to use the internal weights, or even odds. (Kem does even odds within tier)
+- Max Items Mode:
+    - Will roll each item from top to bottom once, with each either being success or failure, outputting multiple items.       
 
 
 
