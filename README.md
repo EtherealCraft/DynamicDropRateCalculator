@@ -11,9 +11,9 @@ This standalone software is used to automate drop rate statistical analysis.
 
 ## Storage Format:
 ### CSV file with a header in the format of:
-    \<Tier Name\>:\<Tier Weight\>,\<Tier Name>\:\<Tier Weight\>,......
+    <Tier Name>:<Tier Weight>,<Tier Name>:<Tier Weight>,......
 ### Each following line in the format of: 
-    \<objectName\>, \<roll Weight\>, \<tier*\>
+    <objectName>,<roll Weight>,<Tier Name>
 
 ### Example File:
     Unspoken:.005,Godly:.895,Legendary:1.1,Epic:8,Rare:20,Common:30,Poor:40
