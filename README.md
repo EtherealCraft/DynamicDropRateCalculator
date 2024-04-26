@@ -2,7 +2,8 @@
 This standalone software is used to automate drop rate statistical analysis.
 
 ## Goal:
-- Process and display statistical information about loot drops and with various modes.
+- Process and display statistical information about drop table and with various modes.
+- Allow changes and additions to drop tables
 
 ## Specifics:
 
@@ -30,11 +31,9 @@ Once you have a file, you must pick a mode. Each mode uses the file drastically 
 - Max Items Mode:
     - Will roll each item from top to bottom once, with each either being success or failure, outputting multiple items.       
 
-
-
-## Statistics:
+## User Options:
 Take in possible statistical parameters such as:
- - Repeatedly ask for lootbox item name and chance
+ - Allow users to create boxes from scratch.
  - Rolls per drop/lootbox (kem rolls 3 times)
  - Rolls per day (range or static number)
  - Uses CSV for creating and storing loot boxes.   
@@ -46,7 +45,37 @@ Take in possible statistical parameters such as:
  - Time and rolls expected for N of each item to be given at 10%, 30%, 50%, 70%, 90%, 95%
  - Test N Sample rolls with output results and stats 
 
-
+## Menus/Flows:
+### Start Menu:
+    1. Load a File - > File Load Flow(Table)
+    2. Create a File -> New File Flow
+### New File Flow:
+    1. Get Name from User
+    2. createEmptyLootTable(name)
+    3. File Load Flow(Empty Loot Table)
+### File Load Flow(table):
+    1. Mode Menu
+    2. Add New Object Menu
+    3.
+### Set Mode Menu:
+    1. Choose from modes
+    2. If tier mode, ask if they want to add a new tier and loop
+### Add New Menu:
+    Options:
+    1. Add via raw weight (DANGER)- > addRaw Flow
+    2. Add via % -> add% Flow
+### AddRaw Flow:
+    1. ask for item name
+    2. ask for item wieght
+    3. ask for item tier (only in tier mode)
+    4. return
+### add% Flow:
+    1. Ask for item name
+    2. Ask for item drop %
+    3. Ask for what item we want to increase
+    4. Display needed % to change, ask for a number within that and 0 to set
+    5. Loop until all % gone.
+    6. return 
 ## Glossary:
 - weight* is the weight on the roll for success. Calculated by suming applicable weights and dividing the chosen weight by the sum to get a chance. (if all weights sum to 10, and your item is weighted 2.05, you have a 20.5% chance of rolling that item as a success)
 - Tier* is not used in all modes, and each item defaults to "common" in the file unless otherwise defined. 
