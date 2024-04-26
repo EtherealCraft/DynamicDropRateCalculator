@@ -45,37 +45,58 @@ Take in possible statistical parameters such as:
  - Time and rolls expected for N of each item to be given at 10%, 30%, 50%, 70%, 90%, 95%
  - Test N Sample rolls with output results and stats 
 
-## Menus/Flows:
+## Menus:
 ### Start Menu:
     1. Load a File - > File Load Flow(Table)
     2. Create a File -> New File Flow
+### Mode Menu:
+    1. Choose from modes
+    2. Change Tier
+    3. Add Tier
+    4. Remove Tier
+### Add New Object Menu:
+    Options:
+    1. Add via raw weight (DANGER)- > addRaw Flow
+    2. Add via % -> add% Flow
+    3. Add via day goal -> Daily Add Flow
+### Loaded Menu:
+    1. View All Info on loaded Box
+    2. View Info on specific Object
+    3. Mode Menu
+    4. Add New Object Menu
+    5. Set Loot Table rolls per Crate
+    6. Set Crates per day.
+    7. Start Menu
+## Flows:
 ### New File Flow:
     1. Get Name from User
     2. createEmptyLootTable(name)
     3. File Load Flow(Empty Loot Table)
 ### File Load Flow(table):
     1. Mode Menu
-    2. Add New Object Menu
-    3.
-### Set Mode Menu:
-    1. Choose from modes
-    2. If tier mode, ask if they want to add a new tier and loop
-### Add New Menu:
-    Options:
-    1. Add via raw weight (DANGER)- > addRaw Flow
-    2. Add via % -> add% Flow
+    2. Set Crate Rolls
+    3. Set Crates per day
+    3. Add New Object Menu
+    4. Rolls per Crate
+    5. Crates Per Day
+    6. Loaded Menu
 ### AddRaw Flow:
-    1. ask for item name
-    2. ask for item wieght
-    3. ask for item tier (only in tier mode)
-    4. return
+    1. Ask for item name
+    2. Ask for item wieght
+    3. Ask for item tier (only in tier mode)
+    4. Return
 ### add% Flow:
     1. Ask for item name
     2. Ask for item drop %
-    3. Ask for what item we want to increase
-    4. Display needed % to change, ask for a number within that and 0 to set
-    5. Loop until all % gone.
-    6. return 
+    3. Loop Ask for what item we want to decrease to compensate for changes until we are balanced
+    4. Return
+### Daily Add Flow:
+    1. Ask for item Name
+    2. Ask for day goal
+    3. Loop Ask for what item we want to decrease to compensate for changes until we are balanced
+    4. Return
+
+
 ## Glossary:
 - weight* is the weight on the roll for success. Calculated by suming applicable weights and dividing the chosen weight by the sum to get a chance. (if all weights sum to 10, and your item is weighted 2.05, you have a 20.5% chance of rolling that item as a success)
 - Tier* is not used in all modes, and each item defaults to "common" in the file unless otherwise defined. 
