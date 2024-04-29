@@ -34,6 +34,7 @@ Once you have a file, you must pick a mode. Each mode uses the file drastically 
 ## User Options:
 Take in possible statistical parameters such as:
  - Allow users to create boxes from scratch.
+ - Add/remove Rows
  - Rolls per drop/lootbox (kem rolls 3 times)
  - Rolls per day (range or static number)
  - Uses CSV for creating and storing loot boxes.   
@@ -47,7 +48,7 @@ Take in possible statistical parameters such as:
 
 ## Menus:
 ### Start Menu:
-    1. Load a File - > File Load Flow(Table)
+    1. Load a File - > File Load Flow(Table) 
     2. Create a File -> New File Flow
 ### Mode Menu:
     1. Choose from modes
@@ -59,14 +60,23 @@ Take in possible statistical parameters such as:
     1. Add via raw weight (DANGER)- > addRaw Flow
     2. Add via % -> add% Flow
     3. Add via day goal -> Daily Add Flow
+### Modify Object Menu:
+    Options:
+    1. Modify Raw Weight -> Modify Raw Flow
+    2. Modify % -> Modify % flow
+    3. Remove via raw weight (DANGER)- > addRaw Flow
+    4. Remove via % -> add% Flow 
 ### Loaded Menu:
     1. View All Info on loaded Box
     2. View Info on specific Object
     3. Mode Menu
     4. Add New Object Menu
-    5. Set Loot Table rolls per Crate
-    6. Set Crates per day.
-    7. Start Menu
+    5. Modify Object Menu
+    6. Set Loot Table rolls per Crate
+    7. Set Crates per day.
+    8. Save Crate as new Crate
+    9. Save over loaded crate
+    10. Start Menu
 ## Flows:
 ### New File Flow:
     1. Get Name from User
@@ -96,7 +106,17 @@ Take in possible statistical parameters such as:
     3. Loop Ask for what item we want to decrease to compensate for changes until we are balanced
     4. Return
 
-
+### Modify % Flow:
+    1. Ask for object name
+    2. Ask for % to remove
+    3. Loop Ask for what item we want to decrease to compensate for changes until we are balanced
+    4. Return
+    
+### Modify Raw Flow:
+    1. Ask for object name
+    2. Ask for raw weight to remove
+    3. Return
+    
 ## Glossary:
 - weight* is the weight on the roll for success. Calculated by suming applicable weights and dividing the chosen weight by the sum to get a chance. (if all weights sum to 10, and your item is weighted 2.05, you have a 20.5% chance of rolling that item as a success)
 - Tier* is not used in all modes, and each item defaults to "common" in the file unless otherwise defined. 
